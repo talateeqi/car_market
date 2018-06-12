@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Car List</title>
+</head>
+<body>
+	{% for car in cars %}
+		<h1>
+			{{car.make}} - {{car.model}}
+			<small>
+				{{car.year}}
+			</small>
+		</h1>
+		<hr>
+	{% endfor %}
+</body>
+</html>
