@@ -15,3 +15,18 @@ def car_detail(request, car_id):
 		"car": car,
 	}
 	return render(request, 'car_detail.html', context)
+
+
+def car_create(request):
+	#Complete Me
+	return render(...)
+
+
+def car_update(request, car_id):
+	#Complete Me
+	return render(...)
+
+
+def car_delete(request, car_id):
+	#Complete Me
+	return render(...)

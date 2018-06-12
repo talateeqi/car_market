@@ -5,12 +5,14 @@
 </head>
 <body>
 	{% for car in cars %}
-		<h1>
-			{{car.make}} - {{car.model}}
-			<small>
-				{{car.year}}
-			</small>
-		</h1>
+		<a href="{{car.get_absolute_url}}">
+			<h1>
+				{{car.make}} - {{car.model}}
+				<small>
+					{{car.year}}
+				</small>
+			</h1>
+		</a>
 		<hr>
 	{% endfor %}
 </body>

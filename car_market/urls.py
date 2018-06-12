@@ -5,6 +5,10 @@ from cars import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cars/', views.car_list, name='car_list'),
-    path('cars/<int:car_id>/', views.car_detail, name='car_detail'),
+    path('cars/', views.car_list, name='car-list'),
+    path('cars/<int:car_id>/', views.car_detail, name='car-detail'),
+
+    path('cars/create', views.car_create, name='car-create'),
+    path('cars/<int:car_id>/update/', views.car_update, name='car-update'),
+    path('cars/<int:car_id>/delete/', views.car_delete, name='car-delete'),
 ]
