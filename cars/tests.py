@@ -13,9 +13,9 @@ class CarModelTestCase(TestCase):
 class CarViewTestCase(TestCase):
     def setUp(self):
         self.data = {
-            "make": "Hamza's Pizza",
-            "model": "Pizza that tastes really good.",
-            "year": "00:01:00",
+            "make": "Jeep",
+            "model": "Wrangler",
+            "year": 2018,
         }
         self.car_1 = Car.objects.create(
             make="Honda",
