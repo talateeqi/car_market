@@ -1,13 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="card bg-dark text-white">
-  {% if car.car_img %}
-	<img class="card-img" src="{{car.car_img.url}}" alt="Card image cap">
-  {% endif %}
-  <div class="card-img-overlay">
+<div class="card text-center">
+  <div class="card-header">
+    Car Details
+  </div>
+  <div class="card-body">
+    {% if car.car_img %}
+  	<img class="card-img" src="{{car.car_img.url}}" alt="Card image cap">
+    {% endif %}
     <h5 class="card-title">{{car.make}} {{car.model}}</h5>
     <p class="card-text">{{car.year}}</p>
+    <a href="{% url 'car-update' car.id %}" class="btn btn-dark">Update</a>
+    <a href="{% url 'car-delete' car.id %}" class="btn btn-danger">Delete</a>
   </div>
 </div>
+
 {% endblock content %}

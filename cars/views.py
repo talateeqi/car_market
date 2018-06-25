@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
+
 from .models import Car
 from .forms import CarForm
 
@@ -24,6 +26,7 @@ def car_create(request):
 		form = CarForm(request.POST, request.FILES or None)
 		if form.is_valid():
 			form.save()
+			messages.success(request, "Successfully Created!")
 			return redirect('car-list')
 		print (form.errors)
 	context = {
@@ -39,6 +42,7 @@ def car_update(request, car_id):
 		form = CarForm(request.POST, request.FILES or None, instance=car)
 		if form.is_valid():
 			form.save()
+			messages.success(request, "Successfully Edited!")
 			return redirect('car-list')
 		print (form.errors)
 	context = {
@@ -50,4 +54,5 @@ def car_update(request, car_id):
 
 def car_delete(request, car_id):
 	Car.objects.get(id=car_id).delete()
+	messages.success(request, "Successfully Deleted!")
 	return redirect('car-list')
